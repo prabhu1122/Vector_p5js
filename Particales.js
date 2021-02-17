@@ -4,7 +4,7 @@ class particale {
         this.radius = 5;
         this.pos = createVector(width / 2, height / 2);
         this.vel = createVector(0, 0);
-        this.acc = createVector(0, 0.1);
+        this.acc = createVector(0, 0);
         //display the sketch
         this.show = function() {
             fill(250);

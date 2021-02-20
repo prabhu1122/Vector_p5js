@@ -11,7 +11,7 @@
 * [How to get](#how-to-get)
 
 ## General info
-This project is create an canvas for draw an sketch.
+This project is gibe the infp for vector class and its functions.
 
 ## Technologies
 This project is created with:

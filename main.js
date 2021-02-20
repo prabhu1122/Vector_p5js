@@ -7,6 +7,7 @@ function setup() {
     for (var i = 0; i < no; i++) {
         particales.push(new particale());
     }
+    //background(0);
 }
 
 function draw() {

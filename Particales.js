@@ -1,13 +1,18 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class particale {
     constructor() {
         //particles radius
         this.radius = 5;
-        this.pos = createVector(width / 2, height / 2);
+        this.pos = createVector(0,0);
         this.vel = createVector(0, 0);
-        this.acc = p5.Vector.random2D();
+        
+        //this.vel = p5.Vector.random2D();
+        //this.vel.mult(.3);
+        //this.acc.setMag(.01);
         //this.acc.normalize();
-        this.acc.mag(.3);
-        this.acc.setMag(random(-.5,.5));
+        //this.acc.mult(.1);
+        //this.acc.setMag(.1);   // same as above line 8,9.
+        //this.acc.setMag(random(0, 0));
         
         //display the sketch
         this.show = function() {
@@ -17,6 +22,15 @@ class particale {
         };
         //update the sketch
         this.update = function() {
+            let mouse = createVector(mouseX, mouseY);
+            this.acc = p5.Vector.sub(mouse,this.pos);
+            this.acc.setMag(0.1);
+            /*this.acc = p5.Vector.random2D();
+            this.acc.normalize();
+            this.vel.limit(3);      //it set the value of velocity to a limit 
+            this.acc.mult(0.03);     //it will stop the mover to zero
+            //this.vel.mult(0);*/
+            //this.vel.limit(2);
             this.vel.add(this.acc);
             this.pos.add(this.vel);
             this.setBoundry();
